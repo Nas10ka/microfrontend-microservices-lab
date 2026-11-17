@@ -5,11 +5,8 @@
   "scripts": {
     "setup": "npm install && npm --prefix apps/shell ci && npm --prefix apps/virtualization ci && npm --prefix apps/booking-hub ci && npm --prefix services/booking-service ci",
     "build:remotes": "npm --prefix apps/virtualization run build && npm --prefix apps/booking-hub run build",
-    "dev": "npm run build:remotes && concurrently --kill-others --names virtualization-build,virtualization,booking-build,booking,api,shell \"npm --prefix apps/virtualization run build:watch\" \"npm --prefix apps/virtualization run preview\" \"npm --prefix apps/booking-hub run build:watch\" \"npm --prefix apps/booking-hub run preview\" \"npm --prefix services/booking-service run start:dev\" \"npm --prefix apps/shell run dev\"",
+    "dev": "npm run build:remotes && node scripts/dev.mjs",
     "build": "npm run build:remotes && npm --prefix apps/shell run build && npm --prefix services/booking-service run build",
     "test": "npm --prefix services/booking-service test"
-  },
-  "devDependencies": {
-    "concurrently": "^9.2.1"
   }
 }

@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 import { Test } from '@nestjs/testing';
+import { ConfigService } from '@nestjs/config';
 import type { INestApplication } from '@nestjs/common';
 import request from 'supertest';
 import { AppModule } from '../src/app.module';
@@ -18,6 +19,10 @@ describe('Booking service scaffold', () => {
 
   afterAll(async () => {
     await app?.close();
+  });
+
+  it('boots with MongoDB disabled', () => {
+    expect(app.get(ConfigService).get('MONGO_ENABLED')).toBe('false');
   });
 
   it('reports service health', async () => {
