@@ -1,0 +1,24 @@
+.booking-hub {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: system-ui, sans-serif;
+  text-align: left;
+}
+
+.booking-hub ul {
+  list-style: none;
+  padding: 0;
+}
+
+.booking-hub li {
+  border: 1px solid #888;
+  border-radius: 0.25rem;
+  margin-block: 1rem;
+  padding: 1rem;
+}
+
+.booking-hub button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
